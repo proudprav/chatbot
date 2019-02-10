@@ -1,9 +1,10 @@
-package com.praveen.chatbot.event_assistent.view
+package com.praveen.chatbot.eventassistent.view
 
 import com.praveen.chatbot.base.Mapper
-import com.praveen.chatbot.event_assistent.domain.EventAssistant
+import com.praveen.chatbot.eventassistent.domain.EventAssistant
 
-class EventAssistantToAssistantViewModelMapper : Mapper<List<EventAssistant>, EventAssistantViewModel> {
+class EventAssistantToAssistantViewModelMapper : Mapper<List<EventAssistant>,
+        EventAssistantViewModel> {
     override fun map(input: List<EventAssistant>): EventAssistantViewModel {
         val assistantViewModels: List<AssistantVM> = input.flatMap {
             val list = arrayListOf<AssistantVM>()

@@ -1,4 +1,4 @@
-package com.praveen.chatbot.event_assistent.platform
+package com.praveen.chatbot.eventassistent.platform
 
 import android.graphics.BitmapFactory
 import android.os.Bundle
@@ -8,7 +8,7 @@ import com.github.bassaer.chatmessageview.model.ChatUser
 import com.github.bassaer.chatmessageview.model.Message
 import com.github.bassaer.chatmessageview.view.ChatView
 import com.praveen.chatbot.R
-import com.praveen.chatbot.event_assistent.view.*
+import com.praveen.chatbot.eventassistent.view.*
 
 class EventAssistantActivity : AppCompatActivity(), AssistantContract.View {
     private val presenter = EventAssistantPresenter(AssistantNavigator(this))

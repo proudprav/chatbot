@@ -1,9 +1,9 @@
-package com.praveen.chatbot.event_assistent.view
+package com.praveen.chatbot.eventassistent.view
 
 import android.util.Log
-import com.praveen.chatbot.event_assistent.data.EventAssistantRepositoryImpl
-import com.praveen.chatbot.event_assistent.data.UserRepositoryImpl
-import com.praveen.chatbot.event_assistent.domain.*
+import com.praveen.chatbot.eventassistent.data.EventAssistantRepositoryImpl
+import com.praveen.chatbot.eventassistent.data.UserRepositoryImpl
+import com.praveen.chatbot.eventassistent.domain.*
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 

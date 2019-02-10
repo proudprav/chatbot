@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.praveen.chatbot.MainActivity">
+    tools:context="com.praveen.chatbot.eventassistent.platform.EventAssistantActivity">
 
     <com.github.bassaer.chatmessageview.view.ChatView
         android:id="@+id/my_chat_view"

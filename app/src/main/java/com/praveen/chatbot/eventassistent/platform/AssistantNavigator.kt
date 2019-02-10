@@ -1,9 +1,9 @@
-package com.praveen.chatbot.event_assistent.platform
+package com.praveen.chatbot.eventassistent.platform
 
 import android.content.Context
 import android.content.Intent
 import android.media.AudioManager
-import com.praveen.chatbot.event_assistent.view.AssistantContract
+import com.praveen.chatbot.eventassistent.view.AssistantContract
 
 class AssistantNavigator(private val context: Context) : AssistantContract.Navigator {
 

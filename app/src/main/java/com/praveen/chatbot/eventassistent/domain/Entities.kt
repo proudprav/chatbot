@@ -1,4 +1,4 @@
-package com.praveen.chatbot.event_assistent.domain
+package com.praveen.chatbot.eventassistent.domain
 
 data class Event ( val name: String, val user: User)
 

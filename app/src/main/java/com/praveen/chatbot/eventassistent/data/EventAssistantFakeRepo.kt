@@ -1,6 +1,6 @@
-package com.praveen.chatbot.event_assistent.data
+package com.praveen.chatbot.eventassistent.data
 
-import com.praveen.chatbot.event_assistent.domain.*
+import com.praveen.chatbot.eventassistent.domain.*
 import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.subjects.PublishSubject

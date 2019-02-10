@@ -1,10 +1,10 @@
-package com.praveen.chatbot.event_assistent.data
+package com.praveen.chatbot.eventassistent.data
 
 import android.util.Log
 import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.android.extension.responseJson
 import com.google.gson.Gson
-import com.praveen.chatbot.event_assistent.domain.*
+import com.praveen.chatbot.eventassistent.domain.*
 import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.subjects.PublishSubject
@@ -52,8 +52,8 @@ class EventAssistantRepositoryImpl : EventAssistantRepository {
             }
         }
 
-        return Assistant(User("2", name = apiResponse.result.source), assistants,
-                action = action?.let {
+        return Assistant(User("2", apiResponse.result.source), assistants,
+                action?.let {
                     AssistantAction(it, apiResponse.result.actionParams)
                 })
     }

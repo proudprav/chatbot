@@ -1,6 +1,6 @@
-package com.praveen.chatbot.event_assistent.view
+package com.praveen.chatbot.eventassistent.view
 
-import com.praveen.chatbot.event_assistent.domain.User
+import com.praveen.chatbot.eventassistent.domain.User
 
 open class AssistantVM(open val user: User)
 

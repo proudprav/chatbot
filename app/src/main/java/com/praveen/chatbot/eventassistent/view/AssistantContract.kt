@@ -1,4 +1,4 @@
-package com.praveen.chatbot.event_assistent.view
+package com.praveen.chatbot.eventassistent.view
 
 interface AssistantContract {
     interface View {

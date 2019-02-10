@@ -1,4 +1,4 @@
-package com.praveen.chatbot.event_assistent.domain
+package com.praveen.chatbot.eventassistent.domain
 
 import io.reactivex.Observable
 import io.reactivex.Single

@@ -1,4 +1,4 @@
-package com.praveen.chatbot.event_assistent.data
+package com.praveen.chatbot.eventassistent.data
 
 import com.google.gson.annotations.SerializedName
 
