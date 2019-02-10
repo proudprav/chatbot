@@ -22,11 +22,30 @@ class Result(
 )
 
 class Fulfillment(
+        @SerializedName("speech")
+        val speech: String,
+
         @SerializedName("messages")
         val messages: List<Message>
 )
 
 class Message(
-        @SerializedName("speech")
-        val speech: String
+        @SerializedName("payload")
+        val payload: Payload?
 )
+class Payload(
+        @SerializedName("richtext")
+        val richText: List<RichText>
+)
+class RichText(
+        @SerializedName("text")
+        val text: String
+)
+
+object ActionTypeUtil{
+         const val DATE = "DATE"
+         const val TIME = "TIME"
+
+}
+
+

@@ -6,7 +6,7 @@ open class AssistantVM(open val user: User)
 
 data class InputAssistant(override val user: User, val input: String) : AssistantVM(user)
 
-data class OutputAssistant(override val user: User, val output: String) : AssistantVM(user)
+data class OutputAssistant(override val user: User, val output: List<String>) : AssistantVM(user)
 
 data class EventAssistantViewModel(
         val eventTextFieldText: String,

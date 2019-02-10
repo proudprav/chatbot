@@ -3,12 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.praveen.chatbot.eventassistent.platform.EventAssistantActivity">
 
     <com.github.bassaer.chatmessageview.view.ChatView
         android:id="@+id/my_chat_view"
         android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        />
+
 
 </FrameLayout>

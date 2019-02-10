@@ -11,7 +11,7 @@ class EventAssistantToAssistantViewModelMapper : Mapper<List<EventAssistant>,
             list.add(InputAssistant(it.event.user, it.event.name))
             list.apply {
                 it.assistant?.let { assistant ->
-                    list.add(OutputAssistant(assistant.user, assistant.result.joinToString()))
+                    list.add(OutputAssistant(assistant.user, assistant.result))
                 }
             }
             list

@@ -14,5 +14,7 @@ enum class AssistantActionType{
     YOUTUBE,
     VOLUME_UP,
     VOLUME_DOWN,
+    VOLUME_MUTE,
+    DATE,
     OTHER
 }

@@ -1,6 +1,5 @@
 package com.praveen.chatbot.eventassistent.data
 
-import android.util.Log
 import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.android.extension.responseJson
 import com.google.gson.Gson
@@ -9,11 +8,11 @@ import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.subjects.PublishSubject
 import org.json.JSONObject
-import java.lang.Exception
 
 class EventAssistantRepositoryImpl : EventAssistantRepository {
     private val assistantsSubject = PublishSubject.create<List<EventAssistant>>()
     private val assistantsResults = arrayListOf<EventAssistant>()
+    private val mapper = AssistantDataMapper()
 
 
     override fun getEventAssistant(event: Event): Single<EventAssistant> {
@@ -22,8 +21,8 @@ class EventAssistantRepositoryImpl : EventAssistantRepository {
             request.run {
                 responseJson { _, _, result ->
                     run {
-                        val assistant = parseEventResponse(result.get().obj())
-                        val eventAssistant = EventAssistant(event, assistant)
+                        val apiResponse = parseEventResponse(result.get().obj())
+                        val eventAssistant = mapper.map(apiResponse, event)
                         assistantsResults.add(eventAssistant)
                         assistantsSubject.onNext(assistantsResults)
                         it.onSuccess(eventAssistant)
@@ -39,23 +38,9 @@ class EventAssistantRepositoryImpl : EventAssistantRepository {
     }
 
 
-    private fun parseEventResponse(response: JSONObject): Assistant {
+    private fun parseEventResponse(response: JSONObject): EventAssistantApiResponse {
         val gson = Gson()
-        val apiResponse = gson.fromJson(response.toString(), EventAssistantApiResponse::class.java)
-        val assistants = apiResponse.result.fulfillment.messages.map { it.speech }
-        var action: AssistantActionType? = null
-        apiResponse.result.action.run {
-            try {
-                action = AssistantActionType.valueOf(this)
-            } catch (exception: Exception) {
-                Log.e("exception", exception.toString())
-            }
-        }
-
-        return Assistant(User("2", apiResponse.result.source), assistants,
-                action?.let {
-                    AssistantAction(it, apiResponse.result.actionParams)
-                })
+        return gson.fromJson(response.toString(), EventAssistantApiResponse::class.java)
     }
 
 }

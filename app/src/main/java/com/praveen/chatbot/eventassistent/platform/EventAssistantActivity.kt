@@ -27,6 +27,8 @@ class EventAssistantActivity : AppCompatActivity(), AssistantContract.View {
         assistantView.setOnClickSendButtonListener(View.OnClickListener {
             presenter.onEventClicked(assistantView.inputText)
         })
+
+
     }
 
     override fun render(viewModel: EventAssistantViewModel) {
@@ -41,20 +43,22 @@ class EventAssistantActivity : AppCompatActivity(), AssistantContract.View {
                                         BitmapFactory.decodeResource(resources,
                                                 R.drawable.ic_account_circle)))
                                 setText(assistant.input)
+
                             }.build()
                     )
 
                 is OutputAssistant -> {
-                    assistantView.send(
-                            Message.Builder().apply {
-                                setUser(ChatUser(assistant.user.id.toInt(), assistant.user.name,
-                                        BitmapFactory.decodeResource(resources,
-                                                R.drawable.ic_account_circle)))
-                                setText(assistant.output)
-                                setRight(true)
-                            }.build()
-                    )
-
+                    assistant.output.forEach {
+                        assistantView.send(
+                                Message.Builder().apply {
+                                    setUser(ChatUser(assistant.user.id.toInt(), assistant.user.name,
+                                            BitmapFactory.decodeResource(resources,
+                                                    R.drawable.ic_account_circle)))
+                                    setText(it)
+                                    setRight(true)
+                                }.build()
+                        )
+                    }
                 }
             }
         }

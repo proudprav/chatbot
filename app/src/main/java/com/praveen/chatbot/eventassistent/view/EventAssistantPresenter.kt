@@ -41,6 +41,8 @@ class EventAssistantPresenter(val navigator: AssistantContract.Navigator) : Assi
             this.action?.run {
                 when(actionType) {
                     AssistantActionType.VOLUME_UP -> navigator.startVolumeUpService()
+                    AssistantActionType.VOLUME_DOWN -> navigator.startVolumeDownService()
+                    AssistantActionType.VOLUME_MUTE -> navigator.startVolumeMuteService()
                     AssistantActionType.YOUTUBE -> params?.apply { navigator.startYouTube(this) }
                     else -> Log.e("presenter", " invalid action type")
                 }

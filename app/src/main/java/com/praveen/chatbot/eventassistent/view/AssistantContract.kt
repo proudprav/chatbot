@@ -14,6 +14,8 @@ interface AssistantContract {
 
     interface Navigator {
         fun startVolumeUpService()
+        fun startVolumeDownService()
+        fun startVolumeMuteService()
         fun startYouTube( params : Map<String, String>)
     }
 }
